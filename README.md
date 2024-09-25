@@ -91,17 +91,17 @@ http://localhost:3000/api/v1
 ```
 ### 5. EndPoints
 
-###Autenticación
+#### Autenticación
 POST /api/v1/auth/login - Iniciar sesión.
 POST /api/v1/auth/register - Registrarse.
 GET /api/v1/auth/profile - Obtener perfil de usuario.
-###Gestión de Usuarios
+#### Gestión de Usuarios
 POST /api/v1/users - Crear usuario.
 GET /api/v1/users - Obtener lista de usuarios.
 GET /api/v1/users/{email} - Obtener usuario por email.
 PATCH /api/v1/users/{email} - Actualizar usuario.
 DELETE /api/v1/users/{email} - Eliminar usuario.
-###Favoritos
+#### Favoritos
 POST /api/v1/favorite - Añadir a favoritos.
 GET /api/v1/favorite - Obtener lista de favoritos.
 DELETE /api/v1/favorite/{itemId} - Eliminar favorito.

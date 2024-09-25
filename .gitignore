@@ -1,7 +1,8 @@
 # compiled output
 /dist
 /node_modules
-mysql
+/mysql
+/postgres
 
 # Logs
 logs
@@ -18,7 +19,8 @@ lerna-debug.log*
 # Tests
 /coverage
 /.nyc_output
-
+# local env files
+.env
 # IDEs and editors
 /.idea
 .project

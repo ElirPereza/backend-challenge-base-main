@@ -27,7 +27,6 @@ async function bootstrap(): Promise<void> {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup("docs", app, document);
 
-  await app.listen(3000);
+  await app.listen(parseInt(`${process.env.POSTGRES_PORT}`));
 }
 void bootstrap();
-

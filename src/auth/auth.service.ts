@@ -1,14 +1,14 @@
 import { BadRequestException, Injectable, UnauthorizedException } from "@nestjs/common";
 import { UsersService } from "src/users/users.service";
-import { RegisterDto } from "./dto/register.dto";
+import type { RegisterDto } from "./dto/register.dto";
 import * as bcryptjs from "bcryptjs";
-import { LoginDto } from "./dto/login.dto";
+import type { LoginDto } from "./dto/login.dto";
 import { JwtService } from "@nestjs/jwt";
 import { response } from "express";
 
 @Injectable()
 export class AuthService {
-    private readonly blacklistedTokens: string[] = []; // Lista negra de tokens
+  private readonly blacklistedTokens: string[] = []; // Lista negra de tokens
   constructor(
     private readonly usersService: UsersService,
     private readonly jwtService: JwtService,
@@ -43,7 +43,7 @@ export class AuthService {
 
     const token = await this.jwtService.signAsync(payload);
 
-    response.cookie ('jwt', token, {httpOnly:true})
+    // response.cookie("jwt", token, { httpOnly: true });
 
     return {
       token,
@@ -59,8 +59,7 @@ export class AuthService {
 
   logout(token: string) {
     this.blacklistedTokens.push(token); // Agregar el token a la lista negra
-    console.log('Token blacklisted:', token); // Verifica aquí
-
+    console.log("Token blacklisted:", token); // Verifica aquí
   }
   // Método para verificar si un token es válido
   isTokenBlacklisted(token: string): boolean {

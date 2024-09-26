@@ -95,7 +95,6 @@ http://localhost:3000/api/v1
 - **POST** `/api/v1/auth/login` - Iniciar sesión.
 - **POST** `/api/v1/auth/register` - Registrarse.
 - **GET** `/api/v1/auth/profile` - Obtener perfil de usuario.
-- **POST** `/api/v1/auth/logout` - Cerrar sesión.
 
 ### Gestión de Usuarios
 - **POST** `/api/v1/users` - Crear usuario.
